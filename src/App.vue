@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <xhs-header />
+  <van-search v-model="value" placeholder="大家都在搜“妆容画廊”" />
+  <xhs-tab />
+  <xhs-footer />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import XhsHeader from "./components/XhsHeader.vue";
+import XhsTab from "./components/XhsTab.vue";
+import XhsFooter from "./components/XhsFooter.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    XhsHeader,
+    XhsTab,
+    XhsFooter,
+  },
+};
 </script>
 
 <style>
+html {
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  background: #f4f4f4;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
+  background: #fff;
+}
+.van-search {
+  padding: 0;
+}
+.van-field__control {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+/deep/ .van-loading {
+  left: 150px;
 }
 </style>
